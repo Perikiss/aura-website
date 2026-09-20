@@ -6,21 +6,34 @@
     <title>AURA Skincare</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="site-layout">
 <header id="main-header">
-    <h1>AURA</h1>
+    <h1 class="logo">AURA</h1>
     <nav>
         <ul class="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="collection.html">Collection</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 </header>
 
-<main>
-    <section class="hero">
+<aside class="sidebar">
+    <h3>Quick Guide</h3>
+    <ul>
+        <li><a href="#hero">Welcome</a></li>
+        <li><a href="#features">Key Benefits</a></li>
+        <li><a href="collection.html">Shop Best Sellers</a></li>
+    </ul>
+    <div class="sidebar-promo">
+        <p><strong>Spring Offer!</strong> Get 15% off your first skincare set.</p>
+    </div>
+</aside>
+
+<main class="main-content">
+    <section class="hero" id="hero">
         <div class="hero-text">
             <h2>Simple care for healthy skin</h2>
             <p>Discover gentle skincare products for your everyday routine.</p>
@@ -31,23 +44,29 @@
         </div>
     </section>
 
-    <section>
+    <section id="features">
         <h2 class="section-title">Why choose AURA?</h2>
         <div class="cards">
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&q=80" alt="Face cream">
-                <h3>Gentle formulas</h3>
-                <p>Our products are made for comfortable everyday skincare.</p>
+                <div class="card-content">
+                    <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&q=80" alt="Face cream">
+                    <h3>Gentle formulas</h3>
+                    <p>Our products are made for comfortable everyday skincare.</p>
+                </div>
             </article>
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&q=80" alt="Skincare bottle">
-                <h3>Simple routine</h3>
-                <p>Easy steps that help you care for your skin every day.</p>
+                <div class="card-content">
+                    <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&q=80" alt="Skincare bottle">
+                    <h3>Simple routine</h3>
+                    <p>Easy steps that help you care for your skin every day.</p>
+                </div>
             </article>
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&q=80" alt="Natural skincare">
-                <h3>Fresh feeling</h3>
-                <p>Light textures and a clean, fresh skincare experience.</p>
+                <div class="card-content">
+                    <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&q=80" alt="Natural skincare">
+                    <h3>Fresh feeling</h3>
+                    <p>Light textures and a clean, fresh skincare experience.</p>
+                </div>
             </article>
         </div>
     </section>
