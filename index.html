@@ -1,15 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA Skincare</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="author" content="Perizat and Adema">
+    <title>AURA Skincare | Healthy Skin, Simple Care</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body class="site-layout">
+
 <header id="main-header">
-    <h1 class="logo">AURA</h1>
-    <nav>
+    <a class="logo" href="index.html">AURA</a>
+
+    <nav aria-label="Main navigation">
         <ul class="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -25,55 +30,306 @@
     <ul>
         <li><a href="#hero">Welcome</a></li>
         <li><a href="#features">Key Benefits</a></li>
-        <li><a href="collection.html">Shop Best Sellers</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#account">Create Account</a></li>
     </ul>
+
     <div class="sidebar-promo">
-        <p><strong>Spring Offer!</strong> Get 15% off your first skincare set.</p>
+        <p><strong>Spring Offer!</strong></p>
+        <p>Get 15% off your first skincare set.</p>
+    </div>
+
+    <div class="clock-card">
+        <h3>Current Date & Time</h3>
+        <p id="current-date">Loading date...</p>
+        <p id="current-time">Loading time...</p>
+    </div>
+
+    <div class="theme-card">
+        <h3>Make it yours</h3>
+        <p>Try a different page background.</p>
+        <button type="button" id="color-btn" class="button">
+            Change Background
+        </button>
     </div>
 </aside>
 
 <main class="main-content">
+
+    <!-- sec hero -->
     <section class="hero" id="hero">
         <div class="hero-text">
-            <h2>Simple care for healthy skin</h2>
-            <p>Discover gentle skincare products for your everyday routine.</p>
+            <p class="eyebrow">YOUR DAILY SKINCARE RITUAL</p>
+            <h1>Simple care for healthy skin</h1>
+            <p>
+                Discover gentle skincare products for your everyday routine.
+                Feel confident in your skin with AURA.
+            </p>
             <a class="button" href="collection.html">View Collection</a>
+            <button type="button" class="button button-outline"
+                    id="open-popup-btn">
+                Join Our Community
+            </button>
         </div>
+
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=1000&q=80" alt="Skincare products">
+            <img
+                src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=1000&q=80"
+                alt="Skincare products arranged on a table">
         </div>
     </section>
 
+    <!-- benfts -->
     <section id="features">
         <h2 class="section-title">Why choose AURA?</h2>
+        <p class="section-intro">
+            Simple essentials for a comfortable everyday skincare routine.
+        </p>
+
         <div class="cards">
             <article class="card">
                 <div class="card-content">
-                    <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&q=80" alt="Face cream">
-                    <h3>Gentle formulas</h3>
-                    <p>Our products are made for comfortable everyday skincare.</p>
+                    <img
+                        src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&q=80"
+                        alt="Face cream">
+                    <h3>Gentle Formulas</h3>
+                    <p>
+                        Our products are designed for a comfortable
+                        everyday skincare experience.
+                    </p>
+                    <a class="button" href="collection.html">Explore</a>
                 </div>
             </article>
+
             <article class="card">
                 <div class="card-content">
-                    <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&q=80" alt="Skincare bottle">
-                    <h3>Simple routine</h3>
-                    <p>Easy steps that help you care for your skin every day.</p>
+                    <img
+                        src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&q=80"
+                        alt="Skincare bottle">
+                    <h3>Simple Routine</h3>
+                    <p>
+                        Easy steps that help you care for your skin
+                        every day.
+                    </p>
+                    <a class="button" href="about.html">Learn More</a>
                 </div>
             </article>
+
             <article class="card">
                 <div class="card-content">
-                    <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&q=80" alt="Natural skincare">
-                    <h3>Fresh feeling</h3>
-                    <p>Light textures and a clean, fresh skincare experience.</p>
+                    <img
+                        src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&q=80"
+                        alt="Skincare and beauty products">
+                    <h3>Fresh Feeling</h3>
+                    <p>
+                        Light textures and a clean, fresh skincare
+                        experience.
+                    </p>
+                    <a class="button" href="gallery.html">View Gallery</a>
                 </div>
             </article>
         </div>
     </section>
+
+    <!-- TASK 2: ACCORDION -->
+    <section class="faq-section" id="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-intro">
+            Everything you need to know about AURA.
+        </p>
+
+        <div class="accordion">
+
+            <article class="accordion-item">
+                <button type="button" class="accordion-question"
+                        aria-expanded="false">
+                    What is AURA Skincare?
+                    <span class="accordion-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="accordion-answer" hidden>
+                    <p>
+                        AURA is a skincare concept focused on simple,
+                        comfortable and easy-to-follow daily routines.
+                    </p>
+                </div>
+            </article>
+
+            <article class="accordion-item">
+                <button type="button" class="accordion-question"
+                        aria-expanded="false">
+                    How do I start a skincare routine?
+                    <span class="accordion-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="accordion-answer" hidden>
+                    <p>
+                        Start with gentle cleansing, moisturizing and
+                        daily sunscreen. Introduce new products gradually.
+                    </p>
+                </div>
+            </article>
+
+            <article class="accordion-item">
+                <button type="button" class="accordion-question"
+                        aria-expanded="false">
+                    How can I choose suitable products?
+                    <span class="accordion-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="accordion-answer" hidden>
+                    <p>
+                        Consider your skin type and sensitivities.
+                        Check product ingredients and patch-test new products.
+                    </p>
+                </div>
+            </article>
+
+            <article class="accordion-item">
+                <button type="button" class="accordion-question"
+                        aria-expanded="false">
+                    How can I receive AURA updates?
+                    <span class="accordion-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="accordion-answer" hidden>
+                    <p>
+                        Use the Join Our Community button to open our
+                        subscription form and enter your email address.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- TASK 1 validation form -->
+    <section class="account-section" id="account">
+        <h2 class="section-title">Create Your AURA Account</h2>
+        <p class="section-intro">
+            Fill in the form to try our JavaScript validation.
+        </p>
+
+        <form id="registration-form" novalidate>
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input
+                    type="text"
+                    id="full-name"
+                    name="fullName"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required>
+                <small class="field-error" id="name-error"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@email.com"
+                    autocomplete="email"
+                    required>
+                <small class="field-error" id="email-error"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="At least 8 characters"
+                    autocomplete="new-password"
+                    required>
+                <small class="field-error" id="password-error"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input
+                    type="password"
+                    id="confirm-password"
+                    name="confirmPassword"
+                    placeholder="Enter your password again"
+                    autocomplete="new-password"
+                    required>
+                <small class="field-error"
+                       id="confirm-password-error"></small>
+            </div>
+
+            <button type="submit" class="button">
+                Create Account
+            </button>
+
+            <p id="registration-message"
+               class="form-message"
+               role="status"
+               aria-live="polite"></p>
+        </form>
+    </section>
+
+    <!-- TASK 3 popup subs form -->
+    <section class="community-section">
+        <h2>Stay in the AURA Circle</h2>
+        <p>
+            Get skincare tips, product news and updates from our community.
+        </p>
+        <button type="button" class="button" id="open-popup-bottom">
+            Subscribe Now
+        </button>
+    </section>
+
 </main>
+
+<!-- POPUP MODAL -->
+<div class="modal" id="subscription-modal"
+     aria-hidden="true" hidden>
+    <div class="modal-content"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="modal-title">
+
+        <button type="button" class="modal-close"
+                id="close-popup-btn"
+                aria-label="Close subscription form">
+            &times;
+        </button>
+
+        <p class="eyebrow">A LITTLE SELF-CARE IN YOUR INBOX</p>
+        <h2 id="modal-title">Join the AURA Community</h2>
+        <p>Subscribe to receive our latest skincare updates.</p>
+
+        <form id="subscription-form" novalidate>
+            <div class="form-group">
+                <label for="subscriber-name">Your Name</label>
+                <input type="text" id="subscriber-name"
+                       placeholder="Enter your name" required>
+                <small class="field-error" id="subscriber-name-error"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="subscriber-email">Email Address</label>
+                <input type="email" id="subscriber-email"
+                       placeholder="you@example.com" required>
+                <small class="field-error"
+                       id="subscriber-email-error"></small>
+            </div>
+
+            <button type="submit" class="button">
+                Subscribe
+            </button>
+
+            <p id="subscription-message"
+               class="form-message"
+               role="status"
+               aria-live="polite"></p>
+        </form>
+    </div>
+</div>
 
 <footer>
     <p>Created by Perizat and Adema | AURA Skincare</p>
+    <p>Assignment #4 — Introduction to JavaScript | SE-2515</p>
 </footer>
+
 </body>
 </html>
