@@ -1,6 +1,4 @@
 
-"use strict";
-
 document.addEventListener("DOMContentLoaded", function () {
 
     // TASK 1: FORM 
