@@ -8,78 +8,97 @@
     <script src="script.js" defer></script>
     
 </head>
-<body class="site-layout">
+<body>
+<div class="aura-loader" id="aura-loader" aria-label="Loading AURA" role="status">
+    <div class="loader-flower" aria-hidden="true">✿</div>
+    <div class="loader-wordmark">AURA</div>
+    <p>Little moments of glow</p>
+    <div class="loader-line"><span></span></div>
+</div>
+
 <header id="main-header">
-    <h1 class="logo">AURA</h1>
-    <nav>
+    <h1>AURA</h1>
+    <nav aria-label="Main navigation">
         <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="collection.html">Collection</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" data-i18n="navHome">Home</a></li>
+            <li><a href="about.html" data-i18n="navAbout">About</a></li>
+            <li><a href="collection.html" data-i18n="navCollection">Collection</a></li>
+            <li><a href="gallery.html" data-i18n="navGallery">Gallery</a></li>
+            <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
         </ul>
     </nav>
 </header>
 
-<aside class="sidebar">
-    <h3>Categories</h3>
-    <ul>
-        <li><a href="#">Serums</a></li>
-        <li><a href="#">Creams</a></li>
-        <li><a href="#">Cleansers</a></li>
-        <li><a href="#">Routine Sets</a></li>
-    </ul>
+<aside class="site-tools" aria-label="Website tools">
+    <label class="language-label" for="language-select" data-i18n="languageLabel">Language</label>
+    <select id="language-select" aria-label="Choose language">
+        <option value="en">EN</option><option value="ru">RU</option><option value="kk">KZ</option>
+    </select>
+    <button type="button" id="theme-toggle" class="tool-button" data-i18n="themeButton">Day / Night</button>
+    <button type="button" id="color-btn" class="tool-button" data-i18n="colorButton">Change background</button>
+    <button type="button" id="show-time-btn" class="tool-button" data-i18n="timeButton">Show time</button>
+    <button type="button" id="play-sound-btn" class="tool-button" data-i18n="soundButton">Play sound</button>
+    <output id="current-time" class="time-output" aria-live="polite"></output>
 </aside>
 
-<main class="main-content">
-    <section class="page-title">
-        <h2>Visual Aesthetics</h2>
-        <p>Explore our natural ingredients, textures, and product moments.</p>
+<main>
+    <section class="page-title reveal-on-scroll">
+        <h2 data-i18n="galleryTitle">Visual Aesthetics</h2>
+        <p data-i18n="gallerySubtitle">Explore our natural ingredients, textures, and product moments.</p>
     </section>
 
-    <div class="gallery-container">
+    <aside class="sidebar reveal-on-scroll">
+        <h3 data-i18n="categoriesTitle">Categories</h3>
+        <ul>
+            <li><a href="#" data-i18n="categorySerums">Serums</a></li>
+            <li><a href="#" data-i18n="categoryCreams">Creams</a></li>
+            <li><a href="#" data-i18n="categoryCleansers">Cleansers</a></li>
+            <li><a href="#" data-i18n="categorySets">Routine Sets</a></li>
+        </ul>
+    </aside>
+
+    <div class="gallery-container reveal-on-scroll">
         <figure class="gallery-item">
             <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=700&q=80" alt="Morning Glow">
-            <figcaption class="overlay">Morning Glow Routine</figcaption>
+            <figcaption class="overlay" data-i18n="item1">Morning Glow Routine</figcaption>
         </figure>
         <figure class="gallery-item">
             <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=700&q=80" alt="Moisturizing Cream">
-            <figcaption class="overlay">Deep Hydration Cream</figcaption>
+            <figcaption class="overlay" data-i18n="item2">Deep Hydration Cream</figcaption>
         </figure>
         <figure class="gallery-item">
             <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=700&q=80" alt="Botanical Drops">
-            <figcaption class="overlay">Pure Vitamin Serum</figcaption>
+            <figcaption class="overlay" data-i18n="item3">Pure Vitamin Serum</figcaption>
         </figure>
         <figure class="gallery-item">
             <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=700&q=80" alt="Organic Cleanser">
-            <figcaption class="overlay">Soothing Foam Cleanser</figcaption>
+            <figcaption class="overlay" data-i18n="item4">Soothing Foam Cleanser</figcaption>
         </figure>
         <figure class="gallery-item">
             <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=700&q=80" alt="AURA Collection">
-            <figcaption class="overlay">Minimalist Ritual</figcaption>
+            <figcaption class="overlay" data-i18n="item5">Minimalist Ritual</figcaption>
         </figure>
         <figure class="gallery-item">
             <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700&q=80" alt="Calm Skincare">
-            <figcaption class="overlay">Herbal Extracts</figcaption>
+            <figcaption class="overlay" data-i18n="item6">Herbal Extracts</figcaption>
         </figure>
         <figure class="gallery-item">
             <img src="https://www.thedetoxmarket.ca/cdn/shop/files/5060139726740_4.jpg?v=1772714290" alt="Fresh Water and Oil">
-            <figcaption class="overlay">Light Barrier Oil</figcaption>
+            <figcaption class="overlay" data-i18n="item7">Light Barrier Oil</figcaption>
         </figure>
         <figure class="gallery-item">
             <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=700&q=80" alt="Clay Formulation">
-            <figcaption class="overlay">Pore Detox Complex</figcaption>
+            <figcaption class="overlay" data-i18n="item8">Pore Detox Complex</figcaption>
         </figure>
         <figure class="gallery-item">
             <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=700&q=80" alt="Evening Essence">
-            <figcaption class="overlay">Night Repair Essence</figcaption>
+            <figcaption class="overlay" data-i18n="item9">Night Repair Essence</figcaption>
         </figure>
     </div>
 </main>
 
 <footer>
-    <p>Created by Perizat and Adema | AURA Skincare</p>
+    <p>Perizat and Adema</p>
 </footer>
 </body>
 </html>
