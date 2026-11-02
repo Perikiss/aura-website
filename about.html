@@ -8,72 +8,71 @@
     <meta name="author" content="Perizat and Adema">
     <script src="script.js" defer></script>
 </head>
-<body class="site-layout">
+<body>
+<div class="aura-loader" id="aura-loader" aria-label="Loading AURA" role="status">
+    <div class="loader-flower" aria-hidden="true">✿</div>
+    <div class="loader-wordmark">AURA</div>
+    <p>Little moments of glow</p>
+    <div class="loader-line"><span></span></div>
+</div>
+
 <header id="main-header">
-    <h1 class="logo">AURA</h1>
-    <nav>
+    <h1>AURA</h1>
+    <nav aria-label="Main navigation">
         <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="collection.html">Collection</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" data-i18n="navHome">Home</a></li>
+            <li><a href="about.html" data-i18n="navAbout">About</a></li>
+            <li><a href="collection.html" data-i18n="navCollection">Collection</a></li>
+            <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
         </ul>
     </nav>
 </header>
-
-<aside class="sidebar">
-    <h3>Quick Guide</h3>
-    <ul>
-        <li><a href="#hero">Welcome</a></li>
-        <li><a href="#features">Key Benefits</a></li>
-        <li><a href="collection.html">Shop Best Sellers</a></li>
-    </ul>
-    <div class="sidebar-promo">
-        <p><strong>Spring Offer!</strong> Get 15% off your first skincare set.</p>
-    </div>
+<aside class="site-tools" aria-label="Website tools">
+        <label class="language-label" for="language-select" data-i18n="languageLabel">Language</label>
+        <select id="language-select" aria-label="Choose language">
+            <option value="en">EN</option><option value="ru">RU</option><option value="kk">KZ</option>
+        </select>
+        <button type="button" id="theme-toggle" class="tool-button" data-i18n="themeButton">Day / Night</button>
+        <button type="button" id="color-btn" class="tool-button" data-i18n="colorButton">Change background</button>
+        <button type="button" id="show-time-btn" class="tool-button" data-i18n="timeButton">Show time</button>
+        <button type="button" id="play-sound-btn" class="tool-button" data-i18n="soundButton">Play sound</button>
+        <output id="current-time" class="time-output" aria-live="polite"></output>
 </aside>
-
-<main class="main-content">
-    <section class="page-title">
-        <h2>About Us</h2>
-        <p>Small steps, healthy skin, natural confidence.</p>
+<main>
+    <section class="page-title reveal-on-scroll">
+        <h2 data-i18n="aboutTitle">About Us</h2>
+        <p data-i18n="aboutSubtitle">Small steps, healthy skin, natural confidence.</p>
     </section>
-
-    <section class="about-section">
-        <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=1000&q=80" alt="Woman taking care of her skin">
+    <section class="about-section reveal-on-scroll">
+        <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=1000&q=80" alt="Skincare products and self-care routine">
         <div>
-            <h2>Our story</h2>
-            <p>AURA was created for people who want a simple and pleasant skincare routine.</p>
-            <p>We believe skincare should be easy, calm and enjoyable.</p>
-            <h3>Our values</h3>
+            <h2 data-i18n="ourStory">Our story</h2>
+            <p data-i18n="storyP1">AURA was created for people who want a simple and pleasant skincare routine.</p>
+            <p data-i18n="storyP2">We believe skincare should be easy, calm and enjoyable.</p>
+            <h3 data-i18n="ourValues">Our values</h3>
             <ol>
-                <li>Care for your skin</li>
-                <li>Choose simple products</li>
-                <li>Be consistent every day</li>
+                <li data-i18n="value1">Care for your skin</li>
+                <li data-i18n="value2">Choose simple products</li>
+                <li data-i18n="value3">Be consistent every day</li>
             </ol>
         </div>
     </section>
-
-    <section>
-        <h2 class="section-title">Our team</h2>
+    <section class="reveal-on-scroll">
+        <h2 class="section-title" data-i18n="ourTeam">Our team</h2>
         <div class="team">
-            <div>
-                <img class="profile-img" src="Peri.jpg" alt="Team member Perizat">
-                <h3>Perizat</h3>
-                <p>Design and CSS</p>
-            </div>
-            <div>
-                <img class="profile-img" src="Adema.jpg" alt="Team member Adema">
-                <h3>Adema</h3>
-                <p>HTML and content</p>
-            </div>
+            <article class="team-member">
+                <img class="profile-img" src="images/Peri.jpg" alt="Team member Perizat">
+                <h3>Perizat</h3><p>Design and CSS</p>
+            </article>
+            <article class="team-member">
+                <img class="profile-img" src="images/Adema.jpg" alt="Team member Adema">
+                <h3>Adema</h3><p>HTML and content</p>
+            </article>
         </div>
     </section>
 </main>
-
 <footer>
-    <p>Created by Perizat and Adema | AURA Skincare</p>
+    <p>Perizat and Adema</p>
 </footer>
 </body>
 </html>
