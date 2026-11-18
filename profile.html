@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AURA Skincare — gentle care, every day.">
+    <title>AURA Skincare | Profile</title>
+    <script>
+        try {
+            if (localStorage.getItem("aura-theme") === "night") {
+                document.documentElement.classList.add("night-theme");
+            }
+        } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/final-project.js" defer></script>
+</head>
+<body>
+    <div class="scroll-progress">
+        <span id="scroll-progress-fill"></span>
+    </div>
+
+    <div class="aura-loader" id="aura-loader" aria-label="Loading AURA" role="status">
+        <div class="loader-flower">✿</div>
+        <div class="loader-wordmark">AURA</div>
+        <p>Little moments of glow</p>
+        <div class="loader-line"><span></span></div>
+    </div>
+
+    <header id="main-header">
+        <h1><a class="brand-link" href="index.html">AURA</a></h1>
+        <nav aria-label="Main navigation">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="routine.html">Skin Routine</a></li>
+                <li><a href="account.html">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside class="site-tools" aria-label="Website tools">
+        <label class="language-label" for="language-select">Language</label>
+        <select id="language-select">
+            <option value="en">EN</option>
+            <option value="ru">RU</option>
+            <option value="kk">KZ</option>
+        </select>
+        <button type="button" id="theme-toggle" class="tool-button">Day / Night</button>
+        <button type="button" id="color-btn" class="tool-button">Change background</button>
+        <button type="button" id="show-time-btn" class="tool-button">Show time</button>
+        <button type="button" id="play-sound-btn" class="tool-button">Play sound</button>
+        <output id="current-time" class="time-output"></output>
+    </aside>
+
+    <main>
+        <section class="page-title">
+            <p class="eyebrow">AURA MEMBERSHIP</p>
+            <h2>Your profile</h2>
+            <p>Your personal skincare space.</p>
+        </section>
+
+        <section class="profile-panel" id="profile-content">
+            <div class="profile-avatar">✿</div>
+            <h2 id="profile-name">Welcome to AURA</h2>
+            <p id="profile-email"></p>
+            <p id="profile-created"></p>
+            <div class="profile-actions">
+                <a class="button" href="routine.html">My Skin Routine</a>
+                <button type="button" id="logout-button" class="secondary-button">Log out</button>
+            </div>
+            <p id="profile-message" class="status-message" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by Perizat and Adema | AURA Skincare</p>
+    </footer>
+</body>
+</html>

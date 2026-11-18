@@ -1,19 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AURA Skincare — simple, gentle skincare for everyday routines.">
-    <title>AURA Skincare | Healthy Skin, Simple Care</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>AURA Skincare | Home</title>
+    <script>try{if(localStorage.getItem("aura-theme")==="night")document.documentElement.classList.add("night-theme");}catch(e){}</script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
+<div class="scroll-progress"><span id="scroll-progress-fill"></span></div>
 <div class="aura-loader" id="aura-loader" aria-label="Loading AURA" role="status">
     <div class="loader-flower" aria-hidden="true">✿</div>
     <div class="loader-wordmark">AURA</div>
-    <p>нежность</p>
+    <p>Little moments of glow</p>
     <div class="loader-line"><span></span></div>
 </div>
 
@@ -25,6 +27,8 @@
             <li><a href="about.html" data-i18n="navAbout">About</a></li>
             <li><a href="collection.html" data-i18n="navCollection">Collection</a></li>
             <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
+            <li><a href="routine.html">Skin Routine</a></li>
+            <li><a href="account.html">Account</a></li>
         </ul>
     </nav>
 </header>
@@ -52,7 +56,7 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=1000&q=80" alt="Skincare products arranged on a table">
+            <img src="" data-src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=1000&q=80" alt="Skincare products arranged on a table">
         </div>
     </section>
 
@@ -82,25 +86,38 @@
         <h2 class="section-title" data-i18n="whyAura">Why choose AURA?</h2>
         <div class="cards">
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&q=80" alt="Face cream">
+                <img src="" data-src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&q=80" alt="Face cream">
                 <h3 data-i18n="gentleFormulas">Gentle formulas</h3>
                 <p data-i18n="gentleText">Our products are made for comfortable everyday skincare.</p>
             </article>
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&q=80" alt="Skincare bottle">
+                <img src="" data-src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&q=80" alt="Skincare bottle">
                 <h3 data-i18n="simpleRoutine">Simple routine</h3>
                 <p data-i18n="routineText">Easy steps that help you care for your skin every day.</p>
             </article>
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&q=80" alt="Natural skincare">
+                <img src="" data-src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&q=80" alt="Natural skincare">
                 <h3 data-i18n="freshFeeling">Fresh feeling</h3>
                 <p data-i18n="freshText">Light textures and a clean, fresh skincare experience.</p>
             </article>
         </div>
     </section>
 
+    <section class="stats-section reveal-on-scroll">
+        <h2 class="section-title">AURA in a few numbers</h2>
+        <div class="stats-grid">
+            <article class="stat-card"><strong class="counter-number" data-target="6">0</strong><span>Skincare essentials</span></article>
+            <article class="stat-card"><strong class="counter-number" data-target="3">0</strong><span>Simple daily steps</span></article>
+            <article class="stat-card"><strong class="counter-number" data-target="100">0</strong><span>Gentle care commitment</span></article>
+        </div>
+    </section>
+    <section class="copy-card reveal-on-scroll">
+        <h3>A little AURA treat</h3><p>Use this demo welcome code: <strong id="promo-code">AURA-GLOW</strong></p>
+        <button type="button" id="copy-code-btn">Copy code <span aria-hidden="true">⧉</span></button>
+    </section>
     <section class="faq-section reveal-on-scroll">
         <h2 class="section-title" data-i18n="faqTitle">Frequently Asked Questions</h2>
+        <input type="search" id="faq-search" class="faq-search" placeholder="Search in FAQ..." aria-label="Search frequently asked questions">
         <article class="faq-item">
             <h3 data-i18n="faqQ1">How do I start a skincare routine?</h3>
             <p data-i18n="faqA1">Start with a gentle cleanser, moisturizer, and sunscreen in the morning. Add new products slowly.</p>
@@ -116,7 +133,7 @@
     </section>
 </main>
 <footer>
-    <p>Perizat and Adema</p>
+    <p>Created by Perizat and Adema | AURA Skincare</p>
 </footer>
 </body>
 </html>

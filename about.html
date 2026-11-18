@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About AURA</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="author" content="Perizat and Adema">
-    <script src="script.js" defer></script>
+    <meta name="description" content="AURA Skincare — simple, gentle skincare for everyday routines.">
+    <title>AURA Skincare | About</title>
+    <script>try{if(localStorage.getItem("aura-theme")==="night")document.documentElement.classList.add("night-theme");}catch(e){}</script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
+<div class="scroll-progress"><span id="scroll-progress-fill"></span></div>
 <div class="aura-loader" id="aura-loader" aria-label="Loading AURA" role="status">
     <div class="loader-flower" aria-hidden="true">✿</div>
     <div class="loader-wordmark">AURA</div>
@@ -24,6 +27,8 @@
             <li><a href="about.html" data-i18n="navAbout">About</a></li>
             <li><a href="collection.html" data-i18n="navCollection">Collection</a></li>
             <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
+            <li><a href="routine.html">Skin Routine</a></li>
+            <li><a href="account.html">Account</a></li>
         </ul>
     </nav>
 </header>
@@ -44,7 +49,7 @@
         <p data-i18n="aboutSubtitle">Small steps, healthy skin, natural confidence.</p>
     </section>
     <section class="about-section reveal-on-scroll">
-        <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=1000&q=80" alt="Skincare products and self-care routine">
+        <img src="" data-src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=1000&q=80" alt="Skincare products and self-care routine">
         <div>
             <h2 data-i18n="ourStory">Our story</h2>
             <p data-i18n="storyP1">AURA was created for people who want a simple and pleasant skincare routine.</p>
@@ -72,7 +77,7 @@
     </section>
 </main>
 <footer>
-    <p>Perizat and Adema</p>
+    <p>Created by Perizat and Adema | AURA Skincare</p>
 </footer>
 </body>
 </html>

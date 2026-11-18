@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AURA Skincare — gentle care, every day.">
+    <title>AURA Skincare | Skin Routine</title>
+    <script>
+        try {
+            if (localStorage.getItem("aura-theme") === "night") {
+                document.documentElement.classList.add("night-theme");
+            }
+        } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/final-project.js" defer></script>
+</head>
+<body>
+    <div class="scroll-progress">
+        <span id="scroll-progress-fill"></span>
+    </div>
+
+    <div class="aura-loader" id="aura-loader" aria-label="Loading AURA" role="status">
+        <div class="loader-flower">✿</div>
+        <div class="loader-wordmark">AURA</div>
+        <p>Little moments of glow</p>
+        <div class="loader-line"><span></span></div>
+    </div>
+
+    <header id="main-header">
+        <h1><a class="brand-link" href="index.html">AURA</a></h1>
+        <nav aria-label="Main navigation">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="routine.html">Skin Routine</a></li>
+                <li><a href="account.html">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside class="site-tools" aria-label="Website tools">
+        <label class="language-label" for="language-select">Language</label>
+        <select id="language-select">
+            <option value="en">EN</option>
+            <option value="ru">RU</option>
+            <option value="kk">KZ</option>
+        </select>
+        <button type="button" id="theme-toggle" class="tool-button">Day / Night</button>
+        <button type="button" id="color-btn" class="tool-button">Change background</button>
+        <button type="button" id="show-time-btn" class="tool-button">Show time</button>
+        <button type="button" id="play-sound-btn" class="tool-button">Play sound</button>
+        <output id="current-time" class="time-output"></output>
+    </aside>
+
+    <main>
+        <section class="page-title">
+            <p class="eyebrow">A ROUTINE THAT FEELS LIKE YOU</p>
+            <h2>Find your skin routine</h2>
+            <p>Choose your skin type and your goal. AURA will build a simple AM and PM routine.</p>
+        </section>
+
+        <section class="routine-builder">
+            <form id="routine-form" novalidate>
+                <div class="routine-fields">
+                    <div>
+                        <label for="skin-type">Your skin type</label>
+                        <select id="skin-type">
+                            <option value="">Choose skin type</option>
+                            <option value="dry">Dry</option>
+                            <option value="oily">Oily</option>
+                            <option value="combination">Combination</option>
+                            <option value="normal">Normal</option>
+                            <option value="sensitive">Sensitive</option>
+                        </select>
+                        <small class="field-error" id="skin-type-error"></small>
+                    </div>
+                    <div>
+                        <label for="skin-goal">Your main goal</label>
+                        <select id="skin-goal">
+                            <option value="">Choose your goal</option>
+                            <option value="hydration">Hydration</option>
+                            <option value="balance">Oil balance</option>
+                            <option value="glow">Healthy glow</option>
+                            <option value="simple">Simple basic care</option>
+                        </select>
+                        <small class="field-error" id="skin-goal-error"></small>
+                    </div>
+                </div>
+                <button type="submit">Build my routine ✨</button>
+            </form>
+            <p class="routine-disclaimer">This is a general educational routine, not a medical diagnosis. Introduce products gradually and patch-test new products. If your skin is irritated or you have a skin condition, ask a qualified professional.</p>
+        </section>
+
+        <section id="routine-results" class="routine-results" hidden>
+            <div class="routine-heading">
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL PLAN</p>
+                    <h2 id="routine-title">Your daily ritual</h2>
+                </div>
+                <button type="button" id="reset-routine" class="secondary-button">Choose again</button>
+            </div>
+            <div class="routine-columns">
+                <article class="routine-card">
+                    <h3>☀ Morning routine</h3>
+                    <p>Start gently and protect your skin.</p>
+                    <div id="morning-steps" class="routine-steps"></div>
+                </article>
+                <article class="routine-card">
+                    <h3>☾ Evening routine</h3>
+                    <p>Cleanse and support your skin barrier.</p>
+                    <div id="evening-steps" class="routine-steps"></div>
+                </article>
+            </div>
+            <div class="tracker-panel">
+                <div class="tracker-heading">
+                    <div>
+                        <h3>Your daily tracker</h3>
+                        <p>Tick each step when you complete it.</p>
+                    </div>
+                    <strong id="tracker-progress">0% complete</strong>
+                </div>
+                <div class="progress-track">
+                    <span id="tracker-fill"></span>
+                </div>
+                <p id="tracker-message" class="status-message" aria-live="polite">Your progress is saved in this browser.</p>
+                <button type="button" id="clear-tracker" class="secondary-button">Reset today's progress</button>
+            </div>
+        </section>
+
+        <section class="api-section">
+            <div class="api-intro">
+                <p class="eyebrow">REAL PRODUCT DATABASE</p>
+                <h2>Explore skincare ingredients</h2>
+                <p>Search the Open Beauty Facts community database for cosmetics and personal-care products. Results may have incomplete ingredient information.</p>
+            </div>
+            <form id="api-search-form" class="api-search-form" novalidate>
+                <label for="api-query">Search products or ingredients</label>
+                <div class="api-search-row">
+                    <input id="api-query" type="text" placeholder="For example: moisturizer, cleanser, serum">
+                    <button type="submit" id="api-search-button">Search database</button>
+                </div>
+                <small class="field-error" id="api-query-error"></small>
+            </form>
+            <p id="api-status" class="status-message" aria-live="polite">Enter a keyword to search the database.</p>
+            <div id="api-results" class="api-results"></div>
+            <p class="api-credit">Data source: <a href="https://world.openbeautyfacts.org/" target="_blank" rel="noopener">Open Beauty Facts</a>. Product information is community-contributed and should be checked on the packaging.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by Perizat and Adema | AURA Skincare</p>
+    </footer>
+</body>
+</html>
