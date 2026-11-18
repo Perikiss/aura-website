@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AURA Skincare — simple, gentle skincare for everyday routines.">
     <title>AURA Skincare | Collection</title>
-    <script>try{if(localStorage.getItem("aura-theme")==="night")document.documentElement.classList.add("night-theme");}catch(e){}</script>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
     <script src="js/script.js" defer></script>
+    <script src="js/app.js" defer></script>
 </head>
 <body>
-<div class="scroll-progress"><span id="scroll-progress-fill"></span></div>
 <div class="aura-loader" id="aura-loader" aria-label="Loading AURA" role="status">
     <div class="loader-flower" aria-hidden="true">✿</div>
     <div class="loader-wordmark">AURA</div>
@@ -26,9 +25,9 @@
             <li><a href="index.html" data-i18n="navHome">Home</a></li>
             <li><a href="about.html" data-i18n="navAbout">About</a></li>
             <li><a href="collection.html" data-i18n="navCollection">Collection</a></li>
+            <li><a href="uv.html">UV Guide</a></li>
             <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
-            <li><a href="routine.html">Skin Routine</a></li>
-            <li><a href="account.html">Account</a></li>
+            <li><a href="auth.html" id="account-link">Sign in</a></li>
         </ul>
     </nav>
 </header>
@@ -43,6 +42,15 @@
         <button type="button" id="play-sound-btn" class="tool-button" data-i18n="soundButton">Play sound</button>
         <output id="current-time" class="time-output" aria-live="polite"></output>
 </aside>
+<div class="jquery-search-wrap">
+    <label for="site-search">Search AURA</label>
+    <div class="search-field">
+        <input type="search" id="site-search" placeholder="Search products, routines, questions..." autocomplete="off">
+        <button type="button" id="clear-search" aria-label="Clear search">×</button>
+        <ul id="search-suggestions" role="listbox" aria-label="Search suggestions"></ul>
+    </div>
+    <p class="search-help">Start typing to find content on this page.</p>
+</div>
 <main>
     <section class="page-title reveal-on-scroll">
         <h2 data-i18n="collectionTitle">Our Collection</h2>
@@ -50,6 +58,7 @@
     </section>
     <section class="filter-section reveal-on-scroll" aria-label="Product filters">
         <h2 data-i18n="filterTitle">Find your skincare</h2>
+        <p class="search-hint">Use the Search AURA field above to filter products instantly.</p>
         <p data-i18n="filterHelp">Choose a category to filter the products.</p>
         <div class="filter-buttons" role="group" aria-label="Filter products by category">
             <button type="button" class="filter-button active" data-filter="all" data-i18n="filterAll">All products</button>
@@ -58,12 +67,6 @@
             <button type="button" class="filter-button" data-filter="moisturizer" data-i18n="filterMoisturizer">Moisturizers</button>
         </div>
         <p id="filter-status" class="status-message" aria-live="polite">Showing all products.</p>
-    </section>
-    <section class="jquery-search-section reveal-on-scroll" aria-label="Live product search">
-        <h2>Search the collection</h2>
-        <p>Type a product name to filter results instantly.</p>
-        <div class="search-wrap"><input type="search" id="product-search" placeholder="Search cleanser, serum, cream..." autocomplete="off" aria-label="Search products"><ul id="search-suggestions" class="search-suggestions" hidden></ul></div>
-        <p id="search-result-count" class="status-message" aria-live="polite">Showing all products.</p>
     </section>
     <section id="product-grid" class="products" aria-live="polite" aria-label="Skincare products"></section>
     <section class="rating-summary reveal-on-scroll">
@@ -85,6 +88,7 @@
 </main>
 <footer>
     <p>Created by Perizat and Adema | AURA Skincare</p>
+    <p class="footer-note">Gentle care, every day.</p>
 </footer>
 </body>
 </html>
